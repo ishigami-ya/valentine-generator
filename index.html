@@ -3,51 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Card Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Personalized Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
-
     <div class="container">
-        <h1>Valentine's Day Card Generator</h1>
-        <p>Create a cute, personalized card for your crush!</p>
+        <h1>Personalized Card Generator</h1>
+        <form id="cardForm">
+            <div class="form-group">
+                <label for="cardTitle">Card Title:</label>
+                <input type="text" id="cardTitle" placeholder="Enter Card Title" required>
+            </div>
 
-        <div id="step1">
-            <label for="cardTitle">Step 1: Enter a Title</label>
-            <input type="text" id="cardTitle" placeholder="e.g., 'To My Favorite Person'">
-        </div>
+            <div class="form-group">
+                <label for="messageInput">Message:</label>
+                <textarea id="messageInput" placeholder="Enter your message" required></textarea>
+            </div>
 
-        <div id="step2">
-            <label for="photoUpload">Step 2: Upload a Picture</label>
-            <input type="file" id="photoUpload" accept="image/*">
-        </div>
+            <div class="form-group">
+                <label for="photoUpload">Upload a Photo (optional):</label>
+                <input type="file" id="photoUpload" accept="image/*">
+            </div>
 
-        <div id="step3">
-            <label for="templateSelect">Step 3: Choose a Template</label>
-            <select id="templateSelect">
-                <option value="template1">The Heartfelt Classic</option>
-                <option value="template2">Cute and Playful</option>
-                <option value="template3">Minimalistic Love</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="templateSelect">Choose Template:</label>
+                <select id="templateSelect">
+                    <option value="template1">Template 1</option>
+                    <option value="template2">Template 2</option>
+                    <option value="template3">Template 3</option>
+                    <option value="template4">Template 4</option>
+                    <option value="template5">Template 5</option>
+                </select>
+            </div>
 
-        <div id="step4">
-            <label for="messageInput">Step 4: Write a Message</label>
-            <textarea id="messageInput" placeholder="Write your love message here..."></textarea>
-        </div>
+            <button type="button" id="generateButton">Generate My Card</button>
+        </form>
 
-        <button id="generateButton">Generate My Card</button>
+        <div id="qrCode" class="qr-code-container"></div>
 
-        <div id="cardPreview">
-            <!-- Card preview will appear here -->
-        </div>
-
-        <div id="qrCode">
-            <!-- QR Code will be displayed here -->
-        </div>
-
-        <div id="instructions">
-            <p>Once your card is ready, scan the QR code to share it!</p>
+        <div id="cardPreview" class="card-preview">
+            <!-- This is where the card will be displayed after generating -->
         </div>
     </div>
 
